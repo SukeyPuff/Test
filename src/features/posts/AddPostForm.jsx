@@ -23,6 +23,19 @@ export const AddPostForm = () => {
     }
   }
 
+  // test thunk
+  const exampleThunkFunction = (dispatch, getState) => {
+    const stateBefore = getState()
+    console.log(`Counter before: ${stateBefore.posts}`)
+    dispatch(postAdded(title, content, userId))
+    const stateAfter = getState()
+    console.log(`Counter after: ${stateAfter.posts}`)
+  }
+
+  const onTestClicked = () => {
+    dispatch(exampleThunkFunction)
+  }
+
   const canSave = Boolean(title) && Boolean(content) && Boolean(userId)
 
   const usersOptions = users.map((user) => (
@@ -57,6 +70,9 @@ export const AddPostForm = () => {
         />
         <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
           保存帖子
+        </button>
+        <button type="button" onClick={onTestClicked}>
+          测试
         </button>
       </form>
     </section>
