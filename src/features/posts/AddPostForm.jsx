@@ -71,9 +71,9 @@ export const AddPostForm = () => {
         <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
           保存帖子
         </button>
-        <button type="button" onClick={onTestClicked}>
+        {/* <button type="button" onClick={onTestClicked}>
           测试
-        </button>
+        </button> */}
       </form>
     </section>
   )

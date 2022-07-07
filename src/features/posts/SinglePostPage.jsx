@@ -8,6 +8,8 @@ export const SinglePostPage = (props) => {
   const { match } = props
   const { postId } = match.params
 
+  console.log(props)
+
   const post = useSelector((state) => selectPostById(state, postId))
 
   if (!post) {
